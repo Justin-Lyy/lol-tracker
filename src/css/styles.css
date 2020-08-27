@@ -1,0 +1,970 @@
+body  {
+    background-color: white;
+}
+
+strong {
+    font-weight: bold;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1275px 1fr;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+}
+
+.flex-display {
+    display: flex;
+}
+
+/* 
+STYLING FOR THE MAIN PAGE
+=============================================================================================================
+*/
+
+.main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2 / -2;
+    height: 50em;
+}
+
+.main-page h1{
+    font-weight: 200;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.main-page form {
+    display:  flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.search-box, .region-select, .search-button {
+    box-sizing: border-box;
+    font-size: 20px;
+    height: 38px;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+}
+
+.search-box:focus, .region-select:focus, .search-button:focus {
+    outline-width: 0px;
+}
+
+.search-box {
+    text-align: left;
+    width: 30em;
+    padding: 0 1em 0 1em;
+    border-right-width: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.region-select {
+    width: 5em;
+    padding: 0 0 0 0.5em;
+    border-right-width: 0;
+    border-left-width: 0;
+    background-color: white;
+}
+
+.search-button {
+    border-left-width: 0;
+    width: 5em;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* 
+STYLING FOR PROFILE PAGE
+=============================================================================================================
+*/
+
+.profile-page {
+    grid-column: 2 / -2;
+    margin-top: 20px;
+}
+
+/* 
+STYLING FOR HEADER
+=============================================================================================================
+*/
+
+.header, footer {
+    font-size: 15px;
+    box-sizing: border-box;
+    background-color: #333333;
+    width: 100%;
+    height: 3.5em;
+    grid-column: 1 / span 12;
+    padding: 0.5em 0 1em 5em;
+}
+
+.header input, .header select, .header button {
+    font-size: 15px;
+    background-color: white;
+    color: #333333;
+    height: 36px;
+}
+
+.header input {
+    max-width: 15em;
+}
+
+.header select {
+    width: 6em;
+}
+
+/* 
+STYLING FOR PROFILE PICTURE AND INFO
+=============================================================================================================
+*/
+
+.profile-picture {
+    width: 175px;
+    height: 175px;
+    margin: 0 20px 20px 0;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.profile-info {
+    flex-direction: column;
+    justify-content: center;
+    color: #333333;
+}
+
+.main-profile h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.main-profile p {
+    font-size: 18px;
+}
+
+/* 
+STYLING FOR RANKED PROFILE
+=============================================================================================================
+*/
+
+.rank {
+    width: 25%;
+    margin-right: 20px;
+    font-size: 15px;
+    color: #333333;
+}
+
+.rank .title {
+    margin-bottom: 10px;
+}
+
+.rank-container {
+    border: 1px grey solid;
+    border-radius: 5px;
+    padding: 20px 5px 20px 5px;
+    margin-bottom: 20px;
+}
+
+.rank-shield {
+    max-height: 120px;
+    max-width: 110px;
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+}
+
+.rank-shield img {
+    height: 100%;
+    width: 100%;
+}
+
+.rank-stats {
+    align-items: flex-start;
+}
+
+/* 
+STYLING FOR MATCH HISTORY AND MATCHES
+=============================================================================================================
+*/
+
+.match-history {
+    width: 75%;
+}
+
+.title {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 2px;
+    background-color: #333333;
+    color: white;
+    font-size: 18px;
+    padding: 0.5em 0 0.5em 1em;
+    font-weight: 500;
+}
+
+.match {
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-top: 9px;
+    align-items: center;
+    color: #333333;
+}
+
+.vertical-center {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-info-basic {
+    width: 90px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.champion {
+    width: 55px;
+    margin: 0 20px 0 0;
+}
+
+.champ-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 10px;
+}
+
+.champ-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.champion p{
+    width: 100%;
+    text-align: center;
+}
+
+.spell-container {
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+}
+
+.spell {
+    width: 40px;
+    height: 40px;
+}
+
+.spell img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.kda-container {
+    width: 100px;
+}
+
+.deaths {
+    color: #C64C40;
+}
+
+.basic-player-info {
+    width: 145px;
+}
+
+.inventory-container {
+    flex-wrap: wrap;
+    width: 170px;
+    height: 85px;
+    margin-right: 25px;
+}
+
+.item, .item-container {
+    width: 40px;
+    height: 40px;
+    background-color: darkslategray;
+    border-radius: 5px;
+    margin-left: 2px;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.team-rosters {
+    width: 260px;
+    height: 100%;
+    font-size: 12px;
+}
+
+.team {
+    width: 50%;
+}
+
+.champion-small {
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+}
+
+.champion-small img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.side-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 35px;
+    height: 100px;
+    background-color: lightgrey;
+    margin-left: 15px;
+    padding-bottom: 20px;
+}
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    
+    border-top: 7px solid white;
+  }
+
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid white;
+}
+
+/* 
+STYLING FOR MATCH EXTENSION
+=============================================================================================================
+*/
+
+.extension {
+    box-sizing: border-box;
+    margin-bottom: 9px;
+    font-size: 14px;
+}
+
+.team-stats {
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 2em;
+    color: white;
+}
+
+.player-stats {
+    box-sizing: border-box;
+    align-items: center;
+    width: 90%;
+    padding: 10px 10px 10px 10px ;
+    color: #333333;
+}
+
+.champ-icon-ext {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.champ-icon-ext img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.spell-container-ext {
+    margin-right: 10px;
+}
+
+.spell-ext {
+    width: 20px;
+    height: 20px;
+}
+
+.spell-ext img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.inventory-container-ext {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 245px;
+    height: 35px;
+}
+
+.item-ext, .item-placeholder-ext {
+    width: 33px;
+    height: 33px;
+    border-radius: 5px;
+    background-color: darkslategray;
+}
+
+.item-ext img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.name-ext, .kda-ext, .dmg-ext, .cs-ext ,.vision-score-ext {
+    margin-right: 10px;
+}
+
+
+.name-ext {
+    width: 150px
+}
+
+.kda-ext{
+    width: 100px;
+}
+
+.cs-ext {
+    width: 100px;
+}
+
+.player-stat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 
+STYLING FOR FOOTER
+=============================================================================================================
+*/
+
+footer {
+    align-self: end;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 12px;
+    color: lightgray;
+    height: max-content;
+    padding: 15px 100px 15px 100px;
+    margin-top: 50px;
+}
+
+/* 
+MEDIA QUERIES
+=============================================================================================================
+*/
+
+@media (max-width: 1300px) {
+    .inner-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        padding: 0.5em 0 0 0;
+    }
+
+    .header form {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header input {
+        width: 40em;
+    }
+
+    .main-profile {
+        justify-content: center;
+    }
+
+    .rank {
+        width: 75%;
+        margin-right: 0;
+    }
+
+    .rank-outer-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .rank-container {
+        width: 47%;
+    }
+
+    .match-history {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .match, .extension {
+        width: 955px;
+    }
+
+}
+
+@media (max-width: 1136px) {
+    #container {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .search-box {
+        width: 50%;
+    }
+
+    .header, footer, .profile-page, .main-page {
+        grid-column: 1 / 2;
+    }
+
+    .rank, .match-history {
+        width: 955px;
+    }
+}
+
+@media (max-width: 980px) { 
+    .profile-page {
+        width: 100%;
+    }
+
+    .rank, .match-history {
+        width: 97%;
+    }
+
+    .match, .extension {
+        width: 100%;
+    }
+
+    .team-rosters {
+        font-size: 10px;
+        width: 200px;
+    }
+
+    .match {
+        font-size: 12px;
+        justify-content: space-between;
+    }
+
+    .player-stats {
+        border: 1px solid red;
+        font-size: 12px;
+        justify-content: center;
+    }
+
+    .kda-container {
+        width: 70px;
+    }
+    
+    .deaths {
+        color: #C64C40;
+    }
+    
+    .basic-player-info {
+        width: 115px;
+    }
+
+    .champion {
+        width: 55px;
+        margin: 0 30px 0 10px;
+    }
+
+    .name-ext {
+        width: 100px;
+    }
+}
+
+@media (max-width: 980px) {  
+    .inventory-container {
+        margin-right: 10px;
+    }
+
+    .player-stats {
+        width: 100%;
+        align-content: space-between;
+    }
+
+    .item-ext, .item-placeholder-ext {
+        width: 20px;
+        height: 20px;
+    }
+
+    .inventory-container-ext {
+        width: 145px;
+        height: 20px;
+    }
+
+    .name-ext {
+        width: 125px;
+    }
+}
+
+@media (max-width: 875px) {  
+    .team-rosters {
+        display: none;
+    }   
+
+    .spell-container {
+        display: flex;
+        flex-direction: row;
+        width: 83px;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 820px) {
+    .main-page .search-box,.main-page .region-select,.main-page .search-button {
+        font-size: 18px;
+    }
+
+    .header input, .header select, .header button {
+        box-sizing: border-box;
+        color: #333333;
+        height: 35px;
+        border-width: 0;
+        border-color: white;
+        border-style: solid;
+        outline-width: 0;
+    }
+
+    .header input {
+        width: 50%;
+    }
+
+    .header button, .header select {
+        margin-left: -2px;
+    }
+    
+    .name-ext, .kda-ext, .dmg-ext, .cs-ext ,.vision-score-ext {
+        margin-right: 5px;
+    }
+
+    .champ-icon-ext {
+        width: 30px;
+        height: 30px;
+    }
+
+    .spell-ext {
+        height: 15px;
+        width: 15px;
+    }
+
+    .name-ext {
+        width: 80px;
+    }
+
+    .kda-ext {
+        width: 90px;
+    }
+
+    .cs-ext {
+        width: 90px;
+    }
+}
+
+@media (max-width: 715px) {  
+    .spell-container {
+        flex-direction: column;
+        width: 40px;
+    }
+}
+
+@media (max-width: 675px) {
+    .match, .side-bar {
+        height: 80px;
+    }
+
+    .side-bar {
+        height: calc(100% - 10px);
+        width: 20px;
+        padding-bottom: 10px;
+    }
+
+    .arrow-down { 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        
+        border-top: 5px solid white;
+    }
+    
+    .arrow-up {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid white;
+    }
+
+    .player-stats {
+        font-size: 8px;
+    }
+
+    .team-stats {
+        font-size: 14px;
+    }
+
+    .champion {
+        width: 40px;
+        margin: 0 5px 0 0;
+    }
+
+    .champ-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .spell {
+        height: 25px;
+        width: 25px;
+    }
+
+    .inventory-container {
+        width: 110px;
+        height: 52px;
+    }
+
+    .item {
+        height: 25px;
+        width: 25px;
+    }
+
+    .spell-container {
+        display: flex;
+        flex-direction: row;
+        width: 52px;
+        justify-content: space-between;
+    }
+
+    .name-ext {
+        width: 70px;
+    }
+
+    .kda-ext {
+        width: 60px;
+    }
+
+    .cs-ext {
+        width: 60px;
+    }
+}
+
+@media (max-width: 590px) {
+    .spell-container {
+        flex-direction: column;
+        width: 25px;
+    }
+
+    .rank-outer-container {
+        flex-direction: column;
+    }
+
+    .rank-container {
+        width: 97%;
+    }
+
+    .inventory-container {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 525px) {
+    .main-page h1{
+        font-weight: 200;
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+
+    .main-page .search-box,.main-page .region-select,.main-page .search-button {
+        font-size: 16px;
+    }
+
+    .search-box, .region-select, .search-button {
+        font-size: 13px;
+    }
+
+    .search-box {
+        width: 50%;
+    }
+
+    .match {
+        font-size: 10px;
+    }
+
+    .game-info-basic {
+        width: 70px;
+    }
+
+    .inventory-container {
+        width: 90px;
+        height: 42px;
+    }
+
+    .item {
+        height: 20px;
+        width: 20px;
+    }
+
+    .inventory-container-ext {
+        width: 86px;
+        height: 12px;
+    }
+
+    .item-ext, .item-placeholder-ext {
+        height: 12px;
+        width: 12px;
+    }
+
+    footer {
+        padding: 15px 50px 15px 50px;
+    }
+}
+
+@media(max-width: 425px) {
+    .match {
+        font-size: 8px;
+    }
+
+    .game-info-basic {
+        width: 55px;
+    }
+
+    .spell-container {
+        width: 20px;
+        height: 41px;
+    }
+
+    .spell {
+        width: 20px;
+        height: 20px;
+    }
+
+    .kda-container {
+        width: 50px;
+    }
+
+    .basic-player-info {
+        width: 85px;
+    }
+
+    .champ-icon-ext {
+        width: 20px;
+        height: 20px;
+    }
+
+    .spell-container-ext {
+        height: 25px;
+        width: 12px;
+    }
+
+    .spell-ext {
+        width: 12px;
+        height: 12px;
+    }
+
+    .player-stats >* {
+        margin-right: 0;
+    }
+}
+
+
+@media(max-width: 380px ) {
+    .header button, .header select {
+        margin-left: -1px;
+    }
+
+    .rank, .match-history {
+        width: 100%;
+    }
+
+    .team-stats {
+        font-size: 12px;
+    }
+
+    .player-stats {
+        font-size: 6px;
+        padding: 10px 0 10px 0;
+    }
+
+    .name-ext {
+        width: 55px;
+    }
+
+    .kda-ext {
+        width: 42px;
+    }
+
+    .vision-score-ext {
+        width: 30px;
+    }
+
+    .cs-ext {
+        width: 50px;
+    }
+}
+
+@media(max-width: 320px ) {
+    .main-page .search-box,.main-page .region-select,.main-page .search-button {
+        border-width: 1px;
+    }
+
+    .main-page .search-box {
+        width: 50%;
+        padding: 0 1em 0 1em;
+        border-right-width: 0;
+    }
+    
+    .main-page .region-select {
+        width: 5em;
+        border-right-width: 0;
+        border-left-width: 0;
+    }
+    
+    .main-page .search-button {
+        border-left-width: 0;
+        width: 5em;
+        border-top-right-radius: 5px;
+    }
+
+    .champion {
+        width: 30px;
+    }
+
+    .champ-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .inventory-container {
+        width: 70px;
+        height: 32px;
+    }
+
+    .item {
+        width: 15px;
+        height: 15px;
+        margin: 0;
+    }
+
+    
+}
