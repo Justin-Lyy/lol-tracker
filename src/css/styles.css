@@ -28,7 +28,7 @@ STYLING FOR THE MAIN PAGE
     align-items: center;
     justify-content: center;
     grid-column: 2 / -2;
-    height: 50em;
+    height: 45em;
 }
 
 .main-page h1{
@@ -455,6 +455,22 @@ STYLING FOR MATCH EXTENSION
 }
 
 /* 
+STYLING FOR ERROR PAGE
+=============================================================================================================
+*/
+
+.error-page {
+    grid-column: 2 / -2;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.error-page h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+/* 
 STYLING FOR FOOTER
 =============================================================================================================
 */
@@ -537,8 +553,15 @@ MEDIA QUERIES
         width: 50%;
     }
 
-    .header, footer, .profile-page, .main-page {
+    .header, footer, .profile-page, .main-page, .error-page {
         grid-column: 1 / 2;
+    }
+
+    .error-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .rank, .match-history {
@@ -693,6 +716,14 @@ MEDIA QUERIES
 }
 
 @media (max-width: 675px) {
+    .error-page {
+        font-size: 14px;
+    }
+
+    .error-page h1 {
+        font-size: 18px;
+    }
+
     .match, .side-bar {
         height: 80px;
     }
@@ -807,6 +838,14 @@ MEDIA QUERIES
         width: 50%;
     }
 
+    .error-page {
+        font-size: 12px;
+    }
+
+    .error-page h1 {
+        font-size: 16px;
+    }
+
     .match {
         font-size: 10px;
     }
@@ -841,6 +880,14 @@ MEDIA QUERIES
 }
 
 @media(max-width: 425px) {
+    .error-page {
+        font-size: 8px;
+    }
+
+    .error-page h1 {
+        font-size: 12px;
+    }
+
     .match {
         font-size: 8px;
     }
@@ -889,6 +936,12 @@ MEDIA QUERIES
 
 
 @media(max-width: 380px ) {
+    .main-page h1{
+        font-weight: 200;
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+
     .header button, .header select {
         margin-left: -1px;
     }

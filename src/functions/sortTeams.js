@@ -116,7 +116,6 @@ function advancedSort(team) {
         })
 
         csArray = csArray.sort((a, b) => (a-b))
-        console.log(csArray)
         unsortedPlayers.forEach(player => {
             let cs = player.cs
             if (cs === csArray[0]) {

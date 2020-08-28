@@ -2,15 +2,15 @@ import React, {useState, useEffect} from 'react';
 import Match from './Match.js';
 
 function MatchHistory(props) {
-    const history = props.history
     let matchIds = []
     const [matchObjs, setMatchObjs] = useState()
 
     useEffect(()=> {
-        matchIds = history.map((match) => match.gameId)
+        matchIds = props.history.map((match) => match.gameId)
         
         let placeHolder = matchIds.map((id, index) => {
-            return <Match key={`${props.name}:${id}`} id={id} name={props.name} region={props.region} data={history[index]}/>
+            
+            return <Match key={`${props.name}:${id}`} id={id} name={props.name} region={props.region} data={props.history[index]}/>
         })
 
         setMatchObjs(placeHolder)

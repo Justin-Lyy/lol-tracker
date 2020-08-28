@@ -47,6 +47,7 @@ function MatchDisplay(props) {
     }
 
     useEffect(() => {
+        updateLoading(true)
         getStats()
         getTeams()
         updateLoading(false)

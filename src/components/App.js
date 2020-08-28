@@ -6,11 +6,12 @@ import "./../css/styles.css";
 import Header from './Header.js'
 import Footer from './Footer.js';
 
-function App(props) {
+function App() {
     const [search, setSearch] = useState({
         region: '',
         summoner: '',
         loading: true,
+        validityMessage: '',
     });
 
     const [profile, setProfile] = useState({});
@@ -42,7 +43,7 @@ function App(props) {
 
     function handleClick(event) {
         event.preventDefault();
-
+        
         fetch(`http://localhost:8888/league/${search.region}/${search.summoner}`) 
             .then(response => {
                 if (!response.ok) {
@@ -55,20 +56,28 @@ function App(props) {
                 setSearch(prevSearch => {
                     return {
                         ...prevSearch,
-                        loading: false
+                        loading: false,
+                        validityMessage: ''
                     }
                 })
             })
             .catch(error => {
                 console.error(`Error fetching the summoner profile (${error})`)
+                setSearch(prevSearch => {
+                    return {
+                        ...prevSearch,
+                        loading: false,
+                        validityMessage: 'error'
+                    }
+                })
             })
     }
 
     return (
         <React.Fragment>
             {search.loading ? <MainPage handleChange={event => handleChange(event)} handleClick={event => handleClick(event)}search={search}/> : ''}
-            {!search.loading ? <Header handleChange={event => handleChange(event)} handleClick={event => handleClick(event)}search={search}/>: ''}
-            {!search.loading ? <ProfilePage profile={profile} history={history} />: ''}
+            {!search.loading ? <Header handleChange={event => handleChange(event)} handleClick={event => handleClick(event)}search={search} />: ''}
+            {!search.loading ? <ProfilePage profile={profile} history={history} search={search}/>: ''}
             <Footer />
         </React.Fragment>
     );

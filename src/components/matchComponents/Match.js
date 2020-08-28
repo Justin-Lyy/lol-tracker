@@ -21,7 +21,7 @@ function Match(props) {
             .catch(error => {
                 console.error(`Error occured fetching match id ${props.id} (${error})`)
             })
-    },[])
+    },[props.id])
 
     return (
         <React.Fragment>

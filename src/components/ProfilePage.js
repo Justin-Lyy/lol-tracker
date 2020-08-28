@@ -8,8 +8,11 @@ function ProfilePage (props) {
     const [history, setHistory] = useState([]) 
 
     useEffect(()=> {
-        // /history/:region/accId/:accountId
-        fetch(`http://localhost:8888/history/${props.profile.region}/accId/${props.profile.accId}`) 
+        setLoading(true)
+        if (!props.search.validityMessage) {
+            // /history/:region/accId/:accountId
+            console.log(`region ${props.profile.region} acc id: ${props.profile.accId}`)
+            fetch(`http://localhost:8888/history/${props.profile.region}/accId/${props.profile.accId}`) 
             .then(response => {
                 if (!response.ok) {
                     throw new Error(response.statusText)
@@ -23,18 +26,24 @@ function ProfilePage (props) {
             .catch(error => {
                 console.error(`Error fetching the match history ${error}`)
             })
-
-        
-    },[props.profile])
+        }
+    },[props.search.validityMessage])
 
     return (
-        <div className='profile-page'>
-            <Profile profile={props.profile}/>
-            <div className='flex-display inner-container'>
-                <Rank profile={props.profile}/>
-                {!loading ? <MatchHistory history={history} region={props.profile.region} name={props.profile.summoner}/>: <h1>Please hold on</h1>}
-            </div>
-        </div>
+        <React.Fragment>
+            {!props.search.validityMessage ? 
+            <div className='profile-page'>
+                <Profile profile={props.profile}/>
+                <div className='flex-display inner-container'>
+                    <Rank profile={props.profile}/>
+                    {!loading ? <MatchHistory history={history} region={props.profile.region} name={props.profile.summoner}/>: <h1>Please hold on</h1>}
+                </div>
+            </div>: 
+            <div className='error-page'>
+                <h1>We couldn't find the player you were looking for</h1>
+                <p>Maybe try checking your spelling? Or maybe you selected the wrong server? </p>
+            </div>}
+        </React.Fragment>
     );
 }
 

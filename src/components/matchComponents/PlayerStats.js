@@ -20,8 +20,6 @@ function round(input) {
 }
 
 function stats(props) {
-    React.useEffect(() => {
-    },[])
     return (
         <div className='flex-display player-stats'>
             <div className='champ-icon-ext'>

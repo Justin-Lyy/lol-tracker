@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   module: {
@@ -23,6 +24,11 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
+        test: /\.(jpg|png|gif|svg)$/,
+        loader: 'image-webpack-loader',
+        enforce: 'pre'
+      },
+      {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader',],
       }
@@ -35,6 +41,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ]
 };

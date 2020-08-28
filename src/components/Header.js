@@ -11,8 +11,13 @@ function Header (props) {
                     placeholder='summoner name'
                     onChange={event => props.handleChange(event)}
                     value={props.search.summoner}
+                    required={true}
                 />
-                <select name="region" onChange={event => props.handleChange(event)} className='region-select'>
+                <select name="region" 
+                    onChange={event => props.handleChange(event)} 
+                    className='region-select' 
+                    required={true}
+                    >
                     <option value="n/a">Region</option>
                     <option value="na1">NA</option>
                     <option value="kr">KR</option>
