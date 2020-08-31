@@ -6,7 +6,7 @@ function RankDisplay(props) {
         <div className='flex-display rank-container'>
             <div className='rank-shield'><img src={! props.unranked ? shields[props.rank.tier] : shields['UNRANKED']}></img></div>
             <div className='flex-display vertical-center rank-stats'>
-                <p>{props.solo ? 'Ranked Solo': ' Ranked FLex'}</p>
+                <p>{props.solo ? 'Ranked Solo': ' Ranked Flex'}</p>
                 {!props.unranked ? <React.Fragment>
                     <p><strong>{props.rank.tier} {props.rank.division}</strong></p>
                     <p>LP: {props.rank.lp}</p>

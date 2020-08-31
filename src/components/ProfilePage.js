@@ -11,7 +11,6 @@ function ProfilePage (props) {
         setLoading(true)
         if (!props.search.validityMessage) {
             // /history/:region/accId/:accountId
-            console.log(`region ${props.profile.region} acc id: ${props.profile.accId}`)
             fetch(`http://localhost:8888/history/${props.profile.region}/accId/${props.profile.accId}`) 
             .then(response => {
                 if (!response.ok) {
@@ -27,7 +26,7 @@ function ProfilePage (props) {
                 console.error(`Error fetching the match history ${error}`)
             })
         }
-    },[props.search.validityMessage])
+    },[props.search.validityMessage, props.profile])
 
     return (
         <React.Fragment>

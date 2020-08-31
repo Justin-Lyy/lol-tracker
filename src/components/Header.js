@@ -12,6 +12,7 @@ function Header (props) {
                     onChange={event => props.handleChange(event)}
                     value={props.search.summoner}
                     required={true}
+                    autoComplete='off'
                 />
                 <select name="region" 
                     onChange={event => props.handleChange(event)} 

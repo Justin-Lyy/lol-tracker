@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production",
-    "bundle-report": "webpack-bundle-analyzer --port 4200 compilation-stats.json"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",

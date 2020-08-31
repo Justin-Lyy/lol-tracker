@@ -7,6 +7,10 @@ import champions from '../../data/champions.js'
 import Inventory from './Inventory.js';
 
 function addZeroes(input) {
+    if (input == 'Infinity') {
+        return 'Perfect'
+    }
+
     let num = '' + input
     const dec = num.split('.')[1]
     const len = dec && dec.length > 2 ? dec.length : 2
@@ -81,7 +85,7 @@ function MatchDisplay(props) {
                 </div>
                 <div className='kda-container flex-display vertical-center'>
                     <p><strong>{playerStats.stats.kills}/<span className='deaths'>{playerStats.stats.deaths}</span>/{playerStats.stats.assists}</strong></p>
-                    <p style={{color: playerStats.kda > 3 ? playerStats.kda > 5 ? '#FE5607': '#0C9153': 'black'}}><strong>{playerStats.kda } KDA</strong></p>
+                    <p style={{color: playerStats.kda > 3 || playerStats.kda === 'Perfect' ? playerStats.kda > 5 || playerStats.kda === 'Perfect' ? '#FE5607': '#0C9153': 'black'}}><strong>{playerStats.kda} KDA</strong></p>
                 </div>
                 <div className='basic-player-info flex-display vertical-center'>
                     <p>Level {playerStats.stats.level}</p>
