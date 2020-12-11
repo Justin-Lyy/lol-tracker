@@ -71,16 +71,16 @@ function MatchDisplay(props) {
                 </div>
                 <div className='champion flex-display vertical-center'>
                     <div className='champ-icon'>
-                        <img src={`http://ddragon.leagueoflegends.com/cdn/10.16.1/img/champion/${champions[props.champ]}.png`}></img>
+                        <img src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${champions[props.champ]}.png`}></img>
                     </div>
                     <p>{champions[props.champ]}</p>
                 </div>
                 <div className='spell-container flex-display'>
                     <div className='spell'>
-                        <img src={`http://ddragon.leagueoflegends.com/cdn/10.16.1/img/spell/${spells[playerStats.spell1Id]}.png`}></img>
+                        <img src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${spells[playerStats.spell1Id]}.png`}></img>
                     </div>
                     <div className='spell'>
-                        <img src={`http://ddragon.leagueoflegends.com/cdn/10.16.1/img/spell/${spells[playerStats.spell2Id]}.png`}></img>
+                        <img src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${spells[playerStats.spell2Id]}.png`}></img>
                     </div>
                 </div>
                 <div className='kda-container flex-display vertical-center'>

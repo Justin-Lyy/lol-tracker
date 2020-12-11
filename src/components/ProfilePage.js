@@ -11,7 +11,7 @@ function ProfilePage (props) {
         setLoading(true)
         if (!props.search.validityMessage) {
             // /history/:region/accId/:accountId
-            fetch(`http://localhost:8888/history/${props.profile.region}/accId/${props.profile.accId}`) 
+            fetch(`https://lol-stat-tracker-project.herokuapp.com/history/${props.profile.region}/accId/${props.profile.accId}`) 
             .then(response => {
                 if (!response.ok) {
                     throw new Error(response.statusText)

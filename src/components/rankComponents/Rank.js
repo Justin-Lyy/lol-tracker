@@ -18,7 +18,7 @@ function Rank (props) {
 
     useEffect(() => {
         // /rank/:region/summonerId/:summonerId
-        fetch(`http://localhost:8888/rank/${props.profile.region}/summonerId/${props.profile.summId}`) 
+        fetch(`https://lol-stat-tracker-project.herokuapp.com/rank/${props.profile.region}/summonerId/${props.profile.summId}`) 
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`${response.status} ${response.statusText}`)

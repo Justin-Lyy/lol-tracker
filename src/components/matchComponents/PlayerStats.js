@@ -23,14 +23,14 @@ function stats(props) {
     return (
         <div className='flex-display player-stats'>
             <div className='champ-icon-ext'>
-                <img src={`http://ddragon.leagueoflegends.com/cdn/10.16.1/img/champion/${champions[props.stats.champ]}.png`}></img>
+                <img src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${champions[props.stats.champ]}.png`}></img>
             </div>
             <div className='spell-container-ext'>
                 <div className='spell-ext'>
-                    <img src={`http://ddragon.leagueoflegends.com/cdn/10.16.1/img/spell/${spells[props.stats.spell1]}.png`}></img>
+                    <img src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${spells[props.stats.spell1]}.png`}></img>
                 </div>
                 <div className='spell-ext'>
-                    <img src={`http://ddragon.leagueoflegends.com/cdn/10.16.1/img/spell/${spells[props.stats.spell2]}.png`}></img>
+                    <img src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${spells[props.stats.spell2]}.png`}></img>
                 </div>
             </div>
             <p className='name-ext'>{props.stats.name}</p>

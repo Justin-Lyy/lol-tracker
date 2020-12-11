@@ -44,7 +44,7 @@ function App() {
     function handleClick(event) {
         event.preventDefault();
         
-        fetch(`http://localhost:8888/league/${search.region}/${search.summoner}`) 
+        fetch(`https://lol-stat-tracker-project.herokuapp.com/league/${search.region}/${search.summoner}`) 
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`${response.status} ${response.statusText}`)

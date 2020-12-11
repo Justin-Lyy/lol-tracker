@@ -7,7 +7,7 @@ function Match(props) {
 
     useEffect(()=> {
         // http://localhost:8888/match/na1/matchId/3533889677
-        fetch(`http://localhost:8888/match/${props.region}/matchId/${props.id}`) 
+        fetch(`https://lol-stat-tracker-project.herokuapp.com/match/${props.region}/matchId/${props.id}`) 
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`${response.status} ${response.statusText}`)
