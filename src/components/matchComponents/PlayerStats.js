@@ -50,7 +50,7 @@ function stats(props) {
                 <p>{props.stats.cs} CS</p>
                 <p>{addZeroes(Math.round(((props.stats.cs/props.duration*60) + Number.EPSILON) * 100) / 100)} CS/Min</p>
             </div>
-            <Inventory inventory={props.stats} ext='-ext'/>
+            <Inventory inventory={props.stats} ext='-ext' patch={props.patch}/>
             
         </div>
     )

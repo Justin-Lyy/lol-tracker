@@ -16,31 +16,31 @@ function Team (props) {
                 <div className='champion-small'>
                     <img className='text' src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${champions[props.team.top.champ]}.png`}></img>
                 </div>
-                <p textOverflow="ellipsis">{shorten(props.team.top.name)}</p>
+                <p>{shorten(props.team.top.name)}</p>
             </div>
             <div className='flex-display'>
                 <div className='champion-small'>
                     <img src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${champions[props.team.jungle.champ]}.png`}></img>
                 </div>
-                <p textOverflow="ellipsis">{shorten(props.team.jungle.name)}</p>
+                <p>{shorten(props.team.jungle.name)}</p>
             </div>
             <div className='flex-display'>
                 <div className='champion-small'> 
                     <img src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${champions[props.team.mid.champ]}.png`}></img>
                 </div>
-                <p textOverflow="ellipsis">{shorten(props.team.mid.name)}</p>
+                <p>{shorten(props.team.mid.name)}</p>
             </div>
             <div className='flex-display'>
                 <div className='champion-small'>
                     <img src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${champions[props.team.adc.champ]}.png`}></img>
                 </div>
-                <p textOverflow="ellipsis">{shorten(props.team.adc.name)}</p>
+                <p>{shorten(props.team.adc.name)}</p>
             </div>
             <div className='flex-display'>
                 <div className='champion-small'>
                     <img src={`http://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${champions[props.team.support.champ]}.png`}></img>
                 </div>
-                <p textOverflow="ellipsis">{shorten(props.team.support.name)}</p>
+                <p>{shorten(props.team.support.name)}</p>
             </div>
         </div>
     )
