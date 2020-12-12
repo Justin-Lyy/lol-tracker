@@ -1,6 +1,13 @@
 import React from 'react';
 
 function Header (props) {
+
+    const [region, updateRegion] = React.useState('')
+
+    React.useEffect(()=> {
+        updateRegion(props.search.region)
+    },[props.search.region])
+
     return (
         <header className='header'>
             <form>
@@ -18,6 +25,7 @@ function Header (props) {
                     onChange={event => props.handleChange(event)} 
                     className='region-select' 
                     required={true}
+                    value={region}
                     >
                     <option value="n/a">Region</option>
                     <option value="na1">NA</option>

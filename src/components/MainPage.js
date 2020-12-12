@@ -4,7 +4,7 @@ function MainPage (props) {
     return (
         <div className='main-page'>
             <h1>LOL Tracker</h1>
-            <form>
+            <form onSubmit={event => props.handleClick(event)}>
                 <input 
                     className='search-box'
                     input='text' 
