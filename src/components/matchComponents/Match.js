@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import MatchDisplay from './MatchDisplay.js';
+import loadable from "@loadable/component";
+
+const LoadableMatchDisplay = loadable(()=> import('./MatchDisplay'))
 
 function Match(props) {
     const [info, setInfo] = useState({})
@@ -25,7 +27,7 @@ function Match(props) {
 
     return (
         <React.Fragment>
-            {!loading ? <MatchDisplay 
+            {!loading ? <LoadableMatchDisplay 
                 duration={info.gameDuration}
                 mode={info.gameMode}
                 champ={props.data.champion}

@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import MainPage from './MainPage.js';
-import ProfilePage from './ProfilePage.js';
 import "./../css/reset.css";
 import "./../css/styles.css";
 import Header from './Header.js'
 import Footer from './Footer.js';
 
+import loadable from "@loadable/component";
+
+const LoadableMainPage = loadable(()=> import('./MainPage'))
+const LoadableProfilePage = loadable(()=> import('./ProfilePage'))
+const LoadableHeader = loadable(()=> import('./Header'))
+const LoadableFooter = loadable(()=> import('./Footer'))
+
 function App() {
+
     const [search, setSearch] = useState({
         region: '',
         summoner: '',
@@ -75,10 +81,10 @@ function App() {
 
     return (
         <React.Fragment>
-            {search.loading ? <MainPage handleChange={event => handleChange(event)} handleClick={event => handleClick(event)}search={search}/> : ''}
-            {!search.loading ? <Header handleChange={event => handleChange(event)} handleClick={event => handleClick(event)}search={search} />: ''}
-            {!search.loading ? <ProfilePage profile={profile} history={history} search={search}/>: ''}
-            <Footer />
+            {search.loading ? <LoadableMainPage key="mainpage" handleChange={event => handleChange(event)} handleClick={event => handleClick(event)}search={search}/> : ''}
+            {!search.loading ? <LoadableHeader handleChange={event => handleChange(event)} handleClick={event => handleClick(event)}search={search} />: ''}
+            {!search.loading ? <LoadableProfilePage profile={profile} history={history} search={search}/>: ''}
+            <LoadableFooter />
         </React.Fragment>
     );
 }

@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import MatchHistory from './matchComponents/MatchHistory.js'
-import Profile from './Profile.js'
-import Rank from './rankComponents/Rank.js'
+import loadable from "@loadable/component";
+
+const LoadableMatchHistory = loadable(()=> import('./matchComponents/MatchHistory'))
+const LoadableProfile = loadable(()=> import('./Profile'))
+const LoadableRank = loadable(()=> import('./rankComponents/Rank'))
 
 function ProfilePage (props) {
     let [loading, setLoading] = useState(true)
@@ -32,10 +34,10 @@ function ProfilePage (props) {
         <React.Fragment>
             {!props.search.validityMessage ? 
             <div className='profile-page'>
-                <Profile profile={props.profile}/>
+                <LoadableProfile profile={props.profile}/>
                 <div className='flex-display inner-container'>
-                    <Rank profile={props.profile}/>
-                    {!loading ? <MatchHistory history={history} region={props.profile.region} name={props.profile.summoner}/>: <h1>Please hold on</h1>}
+                    <LoadableRank profile={props.profile}/>
+                    {!loading ? <LoadableMatchHistory history={history} region={props.profile.region} name={props.profile.summoner}/>: <h1>Please hold on</h1>}
                 </div>
             </div>: 
             <div className='error-page'>
