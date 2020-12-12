@@ -1,7 +1,7 @@
 {
-  "name": "riot-data-webapp",
+  "name": "lol-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend for the lol-tracker server repositry",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Justin Ly",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.11.4",
