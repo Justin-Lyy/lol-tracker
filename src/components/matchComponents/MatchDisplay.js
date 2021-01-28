@@ -36,8 +36,6 @@ function getPatch(gameVersion) {
         let patchNum = validPatch.split(".").slice(0,2).join(".")
 
         if(patchNum === search) {
-            console.log(gameVersion)
-            console.log(validPatch)
             return validPatch
         }
     }
