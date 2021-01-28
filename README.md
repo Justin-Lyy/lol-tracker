@@ -23,4 +23,4 @@ Note that both the bundled files in the dist directory and the source files requ
 
 ### Patch Support
 
-The latest patch supported by LOL Tracker is patch 11.2, the oldest patch supported is patch 3.12
+The latest patch supported by LOL Tracker is patch 11.2
